@@ -28,7 +28,7 @@ router.get('/',(req, res) => {
       pool.query('SELECT * FROM xfn_dish WHERE categoryId = ? ORDER BY did DESC', c.cid, (err, result) => {
         if(err) throw err;
         c.dishList = result;
-        console.log(categoryList);
+        //console.log(categoryList);
         finishCount++;
         //必须保证所有的类别下的菜品都查询完成才能发送响应消息--这些查询都是异步执行
         if (finishCount == categoryList.length) {
